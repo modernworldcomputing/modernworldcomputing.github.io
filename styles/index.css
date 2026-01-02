@@ -146,3 +146,16 @@ footer { background: var(--bg); padding: 6rem 2rem; text-align: center; border-t
     a.p-card.featured { transform: scale(1); }
     a.p-card.featured:hover { transform: translateY(-8px); }
 }
+#contact {
+    margin: 6rem auto;
+    padding: 0 1.5rem;
+}
+
+.contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    background: var(--section-alt);
+    border-radius: 24px;
+    padding: 4rem 2rem;
+}
