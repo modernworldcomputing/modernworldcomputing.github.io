@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drone Showcase | MWC</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="styles/index.css">
 
     <style>
-        /* Gallery container widened for visual impact */
         .gallery-container {
             max-width: 1500px;
             margin: 0 auto;
@@ -24,50 +23,36 @@
             display: inline-block;
             text-decoration: none;
             font-weight: 500;
-            color: var(--text-dim, #666);
-            transition: color 0.2s;
+            color: var(--text-dim);
         }
 
         .back-nav:hover {
-            color: var(--text-main, #000);
+            color: var(--text-main);
         }
 
         .showcase-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .showcase-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            /* Hero image */
-            .showcase-item:first-child {
-                grid-column: 1 / -1;
-                min-height: 620px;
-            }
+            gap: 4rem;
         }
 
         .showcase-item {
             position: relative;
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            height: 650px;
             transition: transform 0.3s ease;
-            min-height: 420px;
         }
 
         .showcase-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
         }
 
         .showcase-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
             transition: transform 0.6s ease;
         }
 
@@ -80,33 +65,19 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
             color: white;
-            padding: 2rem 1.5rem 1rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            padding: 2.5rem 2rem 1.5rem;
         }
 
-        .showcase-item:hover .caption {
-            opacity: 1;
-        }
-
-        /* Contact section alignment */
-        #contact {
-            margin: 6rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .contact-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-            background: var(--section-alt);
-            border-radius: 24px;
-            padding: 4rem 2rem;
+        @media (max-width: 768px) {
+            .showcase-item {
+                height: 420px;
+            }
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -118,15 +89,15 @@
         <div class="gallery-container">
             <a href="index.html" class="back-nav">&larr; Back to Services</a>
 
-            <div class="section-title" style="text-align: left; margin-bottom: 3rem;">
+            <div class="section-title" style="text-align:left; margin-bottom:3rem;">
                 <h1>Aerial <span>Perspectives.</span></h1>
                 <p>High-resolution 4K capture from our recent operations.</p>
             </div>
-            
+
             <div class="showcase-grid">
-                
+
                 <div class="showcase-item">
-                    <img src="images/drone1.JPG" alt="Aerial Drone Shot 1">
+                    <img src="images/drone1.JPG" alt="Aerial Drone Shot 1" onclick="openLightbox(this.src)">
                     <div class="caption">
                         <h3>Site Overview</h3>
                         <p>Capture of neighborhood from 400ft above</p>
@@ -134,18 +105,18 @@
                 </div>
 
                 <div class="showcase-item">
-                    <img src="images/drone2.JPG" alt="Aerial Drone Shot 2">
+                    <img src="images/drone2.JPG" alt="Aerial Drone Shot 2" onclick="openLightbox(this.src)">
                     <div class="caption">
                         <h3>Landscape</h3>
-                        <p>Environmental context and surroundings.</p>
+                        <p>Environmental context and surroundings</p>
                     </div>
                 </div>
 
                 <div class="showcase-item">
-                    <img src="images/drone3.JPG" alt="Aerial Drone Shot 3">
+                    <img src="images/drone3.JPG" alt="Aerial Drone Shot 3" onclick="openLightbox(this.src)">
                     <div class="caption">
                         <h3>Landscape</h3>
-                        <p>Environmental context and surroundings.</p>
+                        <p>Environmental context and surroundings</p>
                     </div>
                 </div>
 
@@ -155,7 +126,7 @@
 
     <section id="contact">
         <div class="contact-inner">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">
+            <h2 style="font-size:2.5rem; margin-bottom:1rem;">
                 Need shots like these?
             </h2>
             <a href="mailto:modernworldcomputing@gmail.com" class="btn">
@@ -172,6 +143,11 @@
         <span id="mode-text">Switch to Dark Mode</span>
     </button>
 </footer>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Expanded drone image">
+</div>
 
 <script src="js/script.js"></script>
 </body>
