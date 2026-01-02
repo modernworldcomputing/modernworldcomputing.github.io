@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Showcase | MWC</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/index.css">
+
+    <style>
+        /* Specific styles for the image showcase */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-nav {
+            margin-bottom: 2rem;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 500;
+            color: var(--text-dim, #666); /* Fallback color if var not set */
+            transition: color 0.2s;
+        }
+
+        .back-nav:hover {
+            color: var(--text-main, #000);
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        /* Large screens get a nice alternating layout or grid */
+        @media (min-width: 768px) {
+            .showcase-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            /* Make the first image span full width for impact */
+            .showcase-item:first-child {
+                grid-column: 1 / -1;
+            }
+        }
+
+        .showcase-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .showcase-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .showcase-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 2rem 1.5rem 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .showcase-item:hover .caption {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">Modern World <span>Computing</span></a>
+</header>
+
+<main>
+    <section>
+        <div class="gallery-container">
+            <a href="index.html" class="back-nav">&larr; Back to Services</a>
+
+            <div class="section-title" style="text-align: left; margin-bottom: 3rem;">
+                <h1>Aerial <span>Perspectives.</span></h1>
+                <p>High-resolution 4K capture from our recent operations.</p>
+            </div>
+            
+            <div class="showcase-grid">
+                
+                <div class="showcase-item">
+                    <img src="images/drone1.jpg" alt="Aerial Drone Shot 1">
+                    <div class="caption">
+                        <h3>Site Overview</h3>
+                        <p>Capture of neighborhood from 400ft above</p>
+                    </div>
+                </div>
+
+                <div class="showcase-item">
+                    <img src="images/drone2.jpg" alt="Aerial Drone Shot 2">
+                    <div class="caption">
+                        <h3>Landscape</h3>
+                        <p>Environmental context and surroundings.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-item">
+                    <img src="images/drone3.JPG" alt="Aerial Drone Shot 3">
+                    <div class="caption">
+                        <h3>Landscape</h3>
+                        <p>Environmental context and surroundings.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="text-align: center; background: var(--section-alt); border-radius: 24px; margin: 6rem 0; padding: 4rem 2rem;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Need shots like these?</h2>
+        <a href="mailto:hello@modernworldcomputing.com" class="btn">Request a Quote</a>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Modern World Computing. All Rights Reserved.</p>
+    <button class="mode-toggle" onclick="toggleDarkMode()">
+        <span id="mode-icon">🌙</span> <span id="mode-text">Switch to Dark Mode</span>
+    </button>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
