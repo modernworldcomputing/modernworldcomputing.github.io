@@ -12,10 +12,11 @@
     <link rel="stylesheet" href="styles/index.css">
 
     <style>
-        /* Specific styles for the image showcase */
+        /* Gallery container widened for visual impact */
         .gallery-container {
-            max-width: 1200px;
+            max-width: 1500px;
             margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
         .back-nav {
@@ -23,7 +24,7 @@
             display: inline-block;
             text-decoration: none;
             font-weight: 500;
-            color: var(--text-dim, #666); /* Fallback color if var not set */
+            color: var(--text-dim, #666);
             transition: color 0.2s;
         }
 
@@ -37,14 +38,15 @@
             gap: 2.5rem;
         }
 
-        /* Large screens get a nice alternating layout or grid */
         @media (min-width: 768px) {
             .showcase-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            /* Make the first image span full width for impact */
+
+            /* Hero image */
             .showcase-item:first-child {
                 grid-column: 1 / -1;
+                min-height: 620px;
             }
         }
 
@@ -54,6 +56,7 @@
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            min-height: 420px;
         }
 
         .showcase-item:hover {
@@ -65,6 +68,11 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .showcase-item:hover img {
+            transform: scale(1.05);
         }
 
         .caption {
@@ -81,6 +89,21 @@
 
         .showcase-item:hover .caption {
             opacity: 1;
+        }
+
+        /* Contact section alignment */
+        #contact {
+            margin: 6rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .contact-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--section-alt);
+            border-radius: 24px;
+            padding: 4rem 2rem;
         }
     </style>
 </head>
@@ -130,16 +153,23 @@
         </div>
     </section>
 
-    <section id="contact" style="text-align: center; background: var(--section-alt); border-radius: 24px; margin: 6rem 0; padding: 4rem 2rem;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Need shots like these?</h2>
-        <a href="mailto:modernworldcomputing@gmail.com" class="btn">Request a Quote</a>
+    <section id="contact">
+        <div class="contact-inner">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">
+                Need shots like these?
+            </h2>
+            <a href="mailto:modernworldcomputing@gmail.com" class="btn">
+                Request a Quote
+            </a>
+        </div>
     </section>
 </main>
 
 <footer>
     <p>&copy; 2025 Modern World Computing. All Rights Reserved.</p>
     <button class="mode-toggle" onclick="toggleDarkMode()">
-        <span id="mode-icon">🌙</span> <span id="mode-text">Switch to Dark Mode</span>
+        <span id="mode-icon">🌙</span>
+        <span id="mode-text">Switch to Dark Mode</span>
     </button>
 </footer>
 
