@@ -349,13 +349,14 @@ a.p-card.featured:hover { transform: scale(1.08); }
 
 footer { background: var(--bg); padding: 6rem 2rem; text-align: center; border-top: 1px solid var(--border); }
 
-/* Footer Logo Styling */
+/* Footer Logo Styling - UPDATED */
 .footer-logo {
-    height: 60px;
+    height: 90px; /* Scaled up from 60px */
     width: auto;
     margin-bottom: 1.5rem;
     display: inline-block;
     opacity: 0.9;
+    border-radius: 16px; /* Added rounded corners */
 }
 
 .mode-toggle { 
