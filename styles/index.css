@@ -71,7 +71,7 @@ body.dark-mode header {
     background: rgba(2, 6, 23, 0.85); 
 }
 
-/* --- Logo & Text Integration --- */
+/* --- Logo & Text Integration (Matches your HTML) --- */
 .logo-link {
     display: flex;
     align-items: center;
