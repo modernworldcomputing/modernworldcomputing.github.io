@@ -71,37 +71,18 @@ body.dark-mode header {
     background: rgba(2, 6, 23, 0.85); 
 }
 
-/* --- Logo & Text Integration (Matches your HTML) --- */
-.logo-link {
-    display: flex;
-    align-items: center;
-    gap: 12px; /* Space between the image and the text */
-    text-decoration: none;
+/* RESTORED TEXT LOGO STYLES */
+.logo { 
+    font-weight: 800; 
+    font-size: 1.3rem; 
+    color: var(--text-main); 
+    letter-spacing: -1px; 
+    text-transform: uppercase; 
+    text-decoration: none; 
 }
 
-.nav-logo {
-    height: 40px; /* Sized to match the text height */
-    width: auto;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.logo-link:hover .nav-logo {
-    transform: scale(1.05);
-}
-
-/* Brand Text Styles */
-.brand-text {
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: var(--text-main);
-    letter-spacing: -0.5px;
-    text-transform: uppercase;
-    line-height: 1;
-}
-
-.brand-text span {
-    color: var(--accent-pop); /* "Computing" is Royal Blue */
+.logo span { 
+    color: var(--accent-pop); 
 }
 
 /* Navigation Links */
@@ -405,9 +386,4 @@ footer { background: var(--bg); padding: 6rem 2rem; text-align: center; border-t
     .duo-section { padding: 3rem 2rem; }
     a.p-card.featured { transform: scale(1); }
     a.p-card.featured:hover { transform: translateY(-8px); }
-}
-
-/* Hide brand text on very small mobile screens if needed */
-@media (max-width: 600px) {
-    .brand-text { font-size: 0.9rem; }
 }
