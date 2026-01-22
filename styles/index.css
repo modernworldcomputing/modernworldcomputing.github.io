@@ -71,22 +71,17 @@ body.dark-mode header {
     background: rgba(2, 6, 23, 0.85); 
 }
 
-/* Logo Image Styling */
+/* Logo Image Styling (Clean for PNG) */
 .nav-logo {
     height: 45px; 
     width: auto;
-    border-radius: 6px; 
-    transition: transform 0.3s ease;
     display: block;
+    transition: transform 0.3s ease;
 }
 
 .nav-logo:hover {
     transform: scale(1.05);
 }
-
-/* Text Fallback (if image fails or removed) */
-.logo { font-weight: 800; font-size: 1.3rem; color: var(--text-main); letter-spacing: -1px; text-transform: uppercase; }
-.logo span { color: var(--accent-pop); }
 
 nav a { 
     color: var(--text-main); 
@@ -355,7 +350,6 @@ footer { background: var(--bg); padding: 6rem 2rem; text-align: center; border-t
 .footer-logo {
     height: 60px;
     width: auto;
-    border-radius: 12px;
     margin-bottom: 1.5rem;
     display: inline-block;
     opacity: 0.9;
@@ -380,15 +374,6 @@ footer { background: var(--bg); padding: 6rem 2rem; text-align: center; border-t
 
 /* --- Contact Section Specifics --- */
 #contact { margin: 6rem auto; padding: 0 1.5rem; }
-
-.contact-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    background: var(--section-alt);
-    border-radius: 24px;
-    padding: 4rem 2rem;
-}
 
 /* --- Responsive Media Queries --- */
 @media (max-width: 850px) {
